@@ -29,5 +29,5 @@ app.use('/api/detalles-ventas', detallesVentasRoutes);
 // iniciar servidor
 
 app.listen(port, () => {
-    console.log("Servidor iniciado en http://localhost:" + port);
+    console.log(`Servidor iniciado en:` + port);
 });
