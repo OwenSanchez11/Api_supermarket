@@ -6,6 +6,26 @@ class Producto {
         db.query(sql, callback);
     }
 
+    getProductosDetalle(callback) {
+        const sql = `
+            SELECT
+                p.id_producto,
+                p.nombre_producto,
+                c.nombre AS categoria,
+                d.marca,
+                CONCAT(d.peso, ' ', d.unidad_medida) AS presentacion,
+                p.precio,
+                i.stock,
+                DATE_FORMAT(d.fecha_vencimiento, '%d/%m/%Y') AS vencimiento
+            FROM productos p
+            LEFT JOIN categorias c ON p.id_categoria = c.id_categoria
+            LEFT JOIN detalles_producto d ON p.id_producto = d.id_producto
+            LEFT JOIN inventario i ON p.id_producto = i.id_producto
+            ORDER BY p.id_producto
+        `;
+        db.query(sql, callback);
+    }
+
     getProductoById(id, callback) {
         const sql = 'SELECT * FROM productos WHERE id_producto = ?';
         db.query(sql, [id], callback);

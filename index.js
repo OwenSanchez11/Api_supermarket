@@ -12,6 +12,9 @@ const detallesVentasRoutes = require('./src/routes/detallesVentasRoutes');
 
 const app = express();
 const port = 3000;
+const cors = require("cors");
+app.use(cors());
+
 
 app.use(bodyParser.json());
 

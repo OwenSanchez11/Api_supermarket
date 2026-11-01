@@ -13,6 +13,13 @@ module.exports = {
         });
     },
 
+    getProductosDetalle: (req, res) => {
+        productosModel.getProductosDetalle((err, result) => {
+            if (err) return res.status(500).json({error: err.message});
+            res.status(200).json({data: result});
+        });
+    },
+
     getProductoById: (req, res) => {
         const {id} = req.params;
         productosModel.getProductoById(id, (err, result) => {
