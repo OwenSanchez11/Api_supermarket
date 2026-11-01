@@ -39,7 +39,7 @@ Desde la carpeta `API`, ejecuta:
 node index.js
 ```
 
-La API escucha en `http://localhost:3000`. MySQL debe estar iniciado y aceptar conexiones en el host y puerto configurados, en caso de no ser así, la aplicación no podrá arrancar correctamente.
+La API escucha localmente en `http://localhost:3000` y está desplegada en la nube en [https://api-supermarket-8jg5.onrender.com/api](https://api-supermarket-8jg5.onrender.com/api). MySQL debe estar iniciado y aceptar conexiones en el host y puerto configurados, en caso de no ser así, la aplicación no podrá arrancar correctamente.
 
 ## Endpoints
 
@@ -68,6 +68,7 @@ Todas las respuestas y solicitudes con cuerpo usan JSON. En las rutas con `:id`,
 | Actualizar categoría | PUT | `/api/categorias/putCategoria/:id` |
 | Eliminar categoría | DELETE | `/api/categorias/deleteCategoria/:id` |
 | Productos | GET | `/api/productos/getProductos` |
+| Productos con datos de categorÃ­a, presentaciÃ³n, stock y vencimiento | GET | `/api/productos/getProductosDetalle` |
 | Producto por ID | GET | `/api/productos/getProductoById/:id` |
 | Crear producto | POST | `/api/productos/postProducto` |
 | Actualizar producto | PUT | `/api/productos/putProducto/:id` |
